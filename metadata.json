@@ -1,0 +1,6 @@
+{
+  "name": "Roots and Pots - Traditional Bistro",
+  "description": "Authentic African restaurant at Arcadia Mall, Greenpark, off Mombasa Road in Athi River. Traditional Kenyan comfort food, woodfire clay pot cooking, online table reservations, doorstep meal delivery, and loyalty rewards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
