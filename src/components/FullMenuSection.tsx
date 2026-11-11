@@ -321,19 +321,19 @@ export const FullMenuSection: React.FC<Props> = ({ onSelectItemForCart, onOpenRe
       {/* ELEGANT PRODUCT DETAIL VIEW MODAL (Per Requirement 5) */}
       {/* ========================================================================= */}
       {detailItem && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-xs p-4 animate-in fade-in overflow-y-auto">
-          <div className="relative w-full max-w-2xl bg-white border border-[#D7CCC8] rounded-3xl overflow-hidden shadow-2xl text-[#3E2723] my-8 animate-in zoom-in-95">
+        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-xs p-0 sm:p-4 animate-in fade-in overflow-y-auto">
+          <div className="relative w-full sm:max-w-2xl bg-white border border-[#D7CCC8] rounded-t-3xl sm:rounded-3xl overflow-hidden shadow-2xl text-[#3E2723] my-0 sm:my-8 max-h-[92vh] flex flex-col animate-in slide-in-from-bottom sm:zoom-in-95 duration-200">
             
             {/* Close Button */}
             <button
               onClick={() => setDetailItem(null)}
-              className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center backdrop-blur-md transition-colors cursor-pointer"
+              className="absolute top-3 right-3 z-20 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center backdrop-blur-md transition-colors cursor-pointer"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
 
             {/* Modal Header: Large Food Photograph */}
-            <div className="relative w-full h-64 sm:h-72 bg-black">
+            <div className="relative w-full h-52 sm:h-72 bg-black shrink-0">
               <img
                 src={detailItem.image}
                 alt={detailItem.name}
@@ -371,7 +371,7 @@ export const FullMenuSection: React.FC<Props> = ({ onSelectItemForCart, onOpenRe
             </div>
 
             {/* Modal Body */}
-            <div className="p-6 space-y-5 max-h-[60vh] overflow-y-auto">
+            <div className="p-4 sm:p-6 space-y-4 sm:space-y-5 overflow-y-auto flex-1 custom-scrollbar">
               
               {/* Description */}
               <div>

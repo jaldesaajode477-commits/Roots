@@ -208,40 +208,42 @@ function MainApp() {
 
       {/* Real-time Order Tracking Persistent Floating Pill */}
       {activeClientOrder && activeClientOrder.status !== 'completed' && activeClientOrder.status !== 'cancelled' && (
-        <aside aria-label="Real-time order tracking" className="fixed bottom-6 right-6 z-40 animate-in slide-in-from-bottom duration-300">
+        <aside aria-label="Real-time order tracking" className="fixed bottom-4 inset-x-3 sm:inset-x-auto sm:right-6 sm:bottom-6 z-40 animate-in slide-in-from-bottom duration-300">
           <button
             onClick={() => setIsCartOpen(true)}
-            className="flex items-center gap-3 px-4 py-3 bg-[#3E2723] text-[#F5F2EB] rounded-2xl shadow-2xl border-2 border-[#8B5A2B] hover:scale-102 transition-all cursor-pointer group"
+            className="w-full sm:w-auto flex items-center justify-between sm:justify-start gap-3 px-3.5 sm:px-4 py-2.5 sm:py-3 bg-[#3E2723] text-[#F5F2EB] rounded-2xl shadow-2xl border-2 border-[#8B5A2B] hover:scale-102 transition-all cursor-pointer group"
           >
-            <div className="relative">
-              {activeClientOrder.status === 'en_route' ? (
-                <Bike className="w-5 h-5 text-[#8B5A2B] animate-bounce" />
-              ) : activeClientOrder.status === 'preparing' ? (
-                <Flame className="w-5 h-5 text-[#8B5A2B] animate-pulse" />
-              ) : activeClientOrder.status === 'ready' ? (
-                <CheckCircle2 className="w-5 h-5 text-[#2E7D32]" />
-              ) : (
-                <ChefHat className="w-5 h-5 text-[#D7CCC8]" />
-              )}
-              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-[#8B5A2B] animate-ping" />
-            </div>
-
-            <div className="text-left text-xs">
-              <div className="flex items-center gap-1.5 font-mono font-bold">
-                <span className="text-[#D7CCC8]">Order {activeClientOrder.orderCode}</span>
-                <span className="text-[10px] uppercase px-1.5 py-0.2 bg-[#8B5A2B] text-[#F5F2EB] rounded">
-                  {activeClientOrder.status.replace('_', ' ')}
-                </span>
+            <div className="flex items-center gap-3">
+              <div className="relative shrink-0">
+                {activeClientOrder.status === 'en_route' ? (
+                  <Bike className="w-5 h-5 text-[#8B5A2B] animate-bounce" />
+                ) : activeClientOrder.status === 'preparing' ? (
+                  <Flame className="w-5 h-5 text-[#8B5A2B] animate-pulse" />
+                ) : activeClientOrder.status === 'ready' ? (
+                  <CheckCircle2 className="w-5 h-5 text-[#2E7D32]" />
+                ) : (
+                  <ChefHat className="w-5 h-5 text-[#D7CCC8]" />
+                )}
+                <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-[#8B5A2B] animate-ping" />
               </div>
-              <p className="text-[11px] text-[#D7CCC8]/90 font-medium">
-                {activeClientOrder.status === 'received' && 'Ticket received at Arcadia Mall hearth'}
-                {activeClientOrder.status === 'preparing' && 'Simmering over acacia firewood & clay pots'}
-                {activeClientOrder.status === 'ready' && 'Plated & ready for dispatch / table'}
-                {activeClientOrder.status === 'en_route' && `Dispatched with Rider ${activeClientOrder.assignedRiderName || 'Boda'}!`}
-              </p>
+
+              <div className="text-left text-xs">
+                <div className="flex items-center gap-1.5 font-mono font-bold">
+                  <span className="text-[#D7CCC8]">Order {activeClientOrder.orderCode}</span>
+                  <span className="text-[10px] uppercase px-1.5 py-0.2 bg-[#8B5A2B] text-[#F5F2EB] rounded">
+                    {activeClientOrder.status.replace('_', ' ')}
+                  </span>
+                </div>
+                <p className="text-[11px] text-[#D7CCC8]/90 font-medium truncate max-w-[200px] sm:max-w-xs">
+                  {activeClientOrder.status === 'received' && 'Ticket received at Arcadia Mall hearth'}
+                  {activeClientOrder.status === 'preparing' && 'Simmering over acacia firewood'}
+                  {activeClientOrder.status === 'ready' && 'Plated & ready for dispatch'}
+                  {activeClientOrder.status === 'en_route' && `Dispatched with ${activeClientOrder.assignedRiderName || 'Boda'}!`}
+                </p>
+              </div>
             </div>
             
-            <span className="text-xs font-bold text-[#8B5A2B] group-hover:translate-x-0.5 transition-transform">
+            <span className="text-xs font-bold text-[#8B5A2B] group-hover:translate-x-0.5 transition-transform shrink-0">
               Track &rarr;
             </span>
           </button>

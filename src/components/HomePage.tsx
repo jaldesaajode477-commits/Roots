@@ -170,27 +170,27 @@ export const HomePage: React.FC<Props> = ({ onNavigate, onAddToCart, onOpenAuth 
         </div>
 
         {/* Top Header Badge & Tagline overlay */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 w-full">
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-2xl bg-[#F5F2EB]/95 backdrop-blur-md border border-[#D7CCC8] shadow-xl">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#8B5A2B] animate-pulse" />
-            <span className="font-mono text-[11px] uppercase tracking-wider text-[#3E2723] font-bold">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-14 w-full">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-2xl bg-[#F5F2EB]/95 backdrop-blur-md border border-[#D7CCC8] shadow-xl max-w-full">
+            <span className="w-2 h-2 rounded-full bg-[#8B5A2B] animate-pulse shrink-0" />
+            <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-wider text-[#3E2723] font-bold truncate">
               Arcadia Mall, Greenpark · Athi River
             </span>
-            <span className="text-[#8B5A2B] font-semibold text-xs">|</span>
-            <span className="text-[11px] text-[#8B5A2B] font-serif font-bold">Authentic Claypot & Embers Bistro</span>
+            <span className="text-[#8B5A2B] font-semibold text-xs hidden xs:inline">|</span>
+            <span className="text-[10px] sm:text-[11px] text-[#8B5A2B] font-serif font-bold hidden xs:inline truncate">Authentic Claypot Bistro</span>
           </div>
         </div>
 
         {/* Center Editorial Title & Narrative */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full">
-          <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#D7CCC8] block">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 w-full">
+          <div className="max-w-3xl space-y-3 sm:space-y-4">
+            <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-widest text-[#D7CCC8] block">
               ACT I · ARCADIA OPENING VISTA
             </span>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold font-serif tracking-tight text-[#F5F2EB] leading-[1.05] drop-shadow-md">
+            <h1 className="text-3xl sm:text-6xl lg:text-7xl font-bold font-serif tracking-tight text-[#F5F2EB] leading-[1.1] sm:leading-[1.05] drop-shadow-md">
               Where Ancestral Hearth Meets Contemporary Elegance.
             </h1>
-            <p className="text-base sm:text-xl text-[#D7CCC8] italic font-serif max-w-2xl">
+            <p className="text-sm sm:text-xl text-[#D7CCC8] italic font-serif max-w-2xl">
               “Chakula halisi cha jadi, kilichopikwa kwenye vyungu vya udongo na kuni za mshikaki.”
             </p>
             <p className="text-xs sm:text-sm text-[#F5F2EB]/90 font-sans leading-relaxed max-w-xl">
@@ -198,10 +198,10 @@ export const HomePage: React.FC<Props> = ({ onNavigate, onAddToCart, onOpenAuth 
             </p>
 
             {/* Quick Hero Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 pt-2">
               <button
                 onClick={() => onNavigate('reservations')}
-                className="px-6 py-3.5 bg-[#8B5A2B] hover:bg-[#70461F] text-[#F5F2EB] font-bold rounded-xl text-xs sm:text-sm transition-all shadow-xl shadow-[#8B5A2B]/40 flex items-center gap-2 cursor-pointer active:scale-98"
+                className="w-full sm:w-auto px-5 py-3.5 bg-[#8B5A2B] hover:bg-[#70461F] text-[#F5F2EB] font-bold rounded-xl text-xs sm:text-sm transition-all shadow-xl shadow-[#8B5A2B]/40 flex items-center justify-center gap-2 cursor-pointer active:scale-98"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Reserve Table Now</span>
@@ -209,7 +209,7 @@ export const HomePage: React.FC<Props> = ({ onNavigate, onAddToCart, onOpenAuth 
 
               <button
                 onClick={() => onNavigate('menu')}
-                className="px-5 py-3.5 bg-[#F5F2EB]/95 hover:bg-[#F5F2EB] text-[#3E2723] font-bold rounded-xl text-xs sm:text-sm transition-all border border-[#D7CCC8] shadow-md flex items-center gap-2 cursor-pointer"
+                className="w-full sm:w-auto px-5 py-3.5 bg-[#F5F2EB]/95 hover:bg-[#F5F2EB] text-[#3E2723] font-bold rounded-xl text-xs sm:text-sm transition-all border border-[#D7CCC8] shadow-md flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Utensils className="w-4 h-4 text-[#8B5A2B]" />
                 <span>Explore 28-Dish Menu</span>
@@ -219,7 +219,7 @@ export const HomePage: React.FC<Props> = ({ onNavigate, onAddToCart, onOpenAuth 
                 onClick={() => {
                   document.getElementById('scene-chapters')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="px-4 py-3.5 bg-[#D7CCC8]/30 hover:bg-[#D7CCC8]/50 text-[#F5F2EB] font-semibold rounded-xl text-xs sm:text-sm backdrop-blur-md transition-all border border-[#F5F2EB]/30 flex items-center gap-1.5 cursor-pointer"
+                className="w-full sm:w-auto px-4 py-3 bg-[#D7CCC8]/30 hover:bg-[#D7CCC8]/50 text-[#F5F2EB] font-semibold rounded-xl text-xs sm:text-sm backdrop-blur-md transition-all border border-[#F5F2EB]/30 flex items-center justify-center gap-1.5 cursor-pointer"
               >
                 <span>Signature Chapters</span>
                 <ChevronDown className="w-4 h-4" />
@@ -380,14 +380,14 @@ export const HomePage: React.FC<Props> = ({ onNavigate, onAddToCart, onOpenAuth 
         </div>
 
         {/* Cinematic Chapter Selector Filmstrip */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5">
+        <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-3 overflow-x-auto no-scrollbar pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
           {SIGNATURE_CHAPTERS.map((dish, idx) => {
             const isActive = activeChapter === idx;
             return (
               <button
                 key={dish.id}
                 onClick={() => setActiveChapter(idx)}
-                className={`p-4 rounded-2xl text-left border transition-all cursor-pointer flex flex-col justify-between relative overflow-hidden ${
+                className={`p-3.5 sm:p-4 rounded-2xl text-left border transition-all cursor-pointer flex flex-col justify-between relative overflow-hidden shrink-0 w-60 sm:w-auto ${
                   isActive
                     ? 'bg-[#D7CCC8] border-[#8B5A2B] shadow-lg scale-101'
                     : 'bg-[#D7CCC8]/35 border-[#D7CCC8]/60 text-[#5D4037] hover:bg-[#D7CCC8]/70 hover:text-[#3E2723]'
